@@ -12,7 +12,7 @@ jobs:
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
       - name: Checkout rep
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Install make utilit
         run: sudo apt-get install -y make
