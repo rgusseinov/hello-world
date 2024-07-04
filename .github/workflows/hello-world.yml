@@ -11,15 +11,12 @@ jobs:
     steps: # список шагов, которые надо выполнить
       # экшен — выполняет какую-то задачу
       # checkout — клонирует репозиторий
+      - name: Checkout rep
       - uses: actions/checkout@v3
-      # run – произвольная bash-команда
-      # ls -la выведет содержимое текущего репозитория
-      #- name: Run hello world command
-      #- run: make hello-world
-
+      
       - name: Install make utilit
-      - run: sudo apt-get install -y make
+        run: sudo apt-get install -y make
 
       - name: Run hello world command
-      - run: make hello-world
+        run: make hello-world
 
