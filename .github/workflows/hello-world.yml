@@ -1,22 +1,20 @@
-# file: .github/workflows/hello-world.yml
-name: hello-world
-# on – определяет события, которые запускают воркфлоу
-on: push
+name: Say Hello
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  # build – произвольно выбранное имя задания
-  # их может быть больше одного
-  build:
-    # операционная система для работы воркфлоу
+  say-hello-job:
     runs-on: ubuntu-latest
-    steps: # список шагов, которые надо выполнить
-      # экшен — выполняет какую-то задачу
-      # checkout — клонирует репозиторий
-      - name: Checkout rep
-        uses: actions/checkout@v3
-      
-      - name: Install make utilit
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Make
         run: sudo apt-get install -y make
 
-      - name: Run hello world command
-        run: make hello-world
-
+      - name: Run say-hello
+        run: make say-hello
